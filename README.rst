@@ -16,8 +16,8 @@ Usage
 Simple iOS Push
 ---------------
 
-    >>> import kahuna.kahuna as kahuna
-    >>> kahuna = kahuna(url, username, password)
+    >>> from kahuna import Kahuna
+    >>> kahuna = Kahuna(url, username, password)
     >>> push = kahuna.create_push()
     >>> push.target = [user_ids]
     >>> push.send()

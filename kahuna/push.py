@@ -14,7 +14,7 @@ class Push(object):
 
     """
 
-t   MAX_PUSH_PER_REQUEST = 100
+    MAX_PUSH_PER_REQUEST = 100
 
     def __init__(self, kahuna):
         self._kahuna = kahuna

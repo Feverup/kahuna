@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from .push import Push
 
 class Kahuna(object):
     """
