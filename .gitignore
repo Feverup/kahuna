@@ -1,0 +1,8 @@
+/dist
+/MANIFEST
+*pyc
+/docs/_build
+.idea/
+*.iml
+.DS_Store
+/build

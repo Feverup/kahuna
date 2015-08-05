@@ -1,0 +1,10 @@
+MANIFEST.in
+README.rst
+setup.py
+kahuna/core.py
+kahuna/push.py
+kahuna.egg-info/PKG-INFO
+kahuna.egg-info/SOURCES.txt
+kahuna.egg-info/dependency_links.txt
+kahuna.egg-info/requires.txt
+kahuna.egg-info/top_level.txt
