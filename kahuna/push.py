@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import requests
+import logging
+import copy
 
+
+logger = logging.getLogger('kahuna')
 
 class Push(object):
     """A push notification. Set audience, message, etc, and send.
@@ -18,7 +22,6 @@ class Push(object):
 
     def __init__(self, kahuna):
         self._kahuna = kahuna
-        self.notification = None
         self.options = None
         self.message = None
         self.params = {}
@@ -40,7 +43,7 @@ class Push(object):
             self._config['influence_rate_limiting'] = self.influence_rate_limiting
         if self.start_time:
             self._config['start_time'] = self.start_time
-        return self.config
+        return self._config
 
     def send(self):
         """ Send the notification
@@ -58,11 +61,11 @@ class Push(object):
         }
 
         # Split the pushes in batches, due to Kahuna constrain. 
-        for i in self.target[::self.MAX_PUSH_PER_REQUEST]:
+        for i in range(len(self.target))[::self.MAX_PUSH_PER_REQUEST]:
             push_array = []
-            target_subset = self.target[i:i+selfMAX_PUSH_PER_REQUEST]
+            target_subset = self.target[i:i+self.MAX_PUSH_PER_REQUEST]
             for user_id in target_subset:
-                push_payload = push_template.copy()
+                push_payload = copy.deepcopy(push_template)
                 push_payload['target']['user_id'] = user_id
                 push_array.append(push_payload)
             
@@ -80,7 +83,7 @@ class Push(object):
             )
 
         logger.info('Push successful. push_ids: %s',
-                    ', '.join(self.target))
+                    str(self.target))
 
         return req.json()
 
