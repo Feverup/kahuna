@@ -3,6 +3,7 @@
 import requests
 import logging
 import copy
+import json
 
 
 logger = logging.getLogger('kahuna')
@@ -82,7 +83,7 @@ class Push(object):
                 auth=(self._kahuna.username,
                       self._kahuna.password,
                 ),
-                data=payload,
+                data=json.dump(payload),
             )
 
         logger.info('Push successful. push_ids: %s',
