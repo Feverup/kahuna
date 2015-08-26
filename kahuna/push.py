@@ -83,7 +83,7 @@ class Push(object):
                 auth=(self._kahuna.username,
                       self._kahuna.password,
                 ),
-                data=json.dump(payload),
+                data=json.dumps(payload),
             )
 
         logger.info('Push successful. push_ids: %s',
