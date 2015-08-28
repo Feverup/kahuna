@@ -58,7 +58,7 @@ class Push(object):
             return {'success':True}
 
         push_template = {
-            'notification': self.message,
+            "notification": {"alert": self.message},
             "target" : {
                 "user_id" : "12345",
             }
@@ -70,7 +70,7 @@ class Push(object):
             target_subset = self.target[i:i+self.MAX_PUSH_PER_REQUEST]
             for user_id in target_subset:
                 push_payload = copy.deepcopy(push_template)
-                push_payload['target']['user_id'] = user_id
+                push_payload['target']['user_id'] = str(user_id)
                 push_array.append(push_payload)
             
             payload = { 'push_array': push_array,
