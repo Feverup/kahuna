@@ -25,6 +25,7 @@ class Push(object):
         self._kahuna = kahuna
         self.options = None
         self.message = None
+        self.campaign = None
         self.params = {}
         self.target = []
 
@@ -44,6 +45,8 @@ class Push(object):
             self._config['influence_rate_limiting'] = self.influence_rate_limiting
         if self.start_time:
             self._config['start_time'] = self.start_time
+        if self.campaign:
+            self._config['campaign_name'] = self.campaign
         return self._config
 
     def send(self):

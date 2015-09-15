@@ -1,0 +1,26 @@
+{
+   "default_params":{
+      "collapseGroup":"plan",
+      "i":1,
+      "textToShare":"Noe arc fills in pairs but fever has room for everyone, share this plan!",
+      "r":"pd",
+      "u":"/?r=p_1&t=testdayeight2",
+      "t":"p_purchase",
+      "provider":"kahuna",
+      "lat":40.4167754,
+      "lng":-3.7037902
+   },
+   "push_array":[
+      {
+         "notification":{
+            "alert":"Ssshh Un SECRETO, un lugar DESCONOCIDO... no lo olvid"
+         },
+         "target":{
+            "user_id":"544"
+         }
+      }
+   ],
+   "default_config":{
+      "campaign_name":"testesteste1"
+   }
+}

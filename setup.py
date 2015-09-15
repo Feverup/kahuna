@@ -8,7 +8,7 @@ __about__ = {}
 
 setup(
     name="kahuna",
-    version="0.1.4",
+    version="0.1.5",
     author="Ismael de Esteban",
     author_email="ismael.deesteban@gmail.com",
     url="http://kahuna.com/",
