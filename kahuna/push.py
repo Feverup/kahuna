@@ -32,20 +32,22 @@ class Push(object):
         self._config = None
         self.start_time = None
         self.optimal_hours = None
-        self.influence_rate_limiting = None
-        self.observe_rate_limiting = None
+        self.influence_rate_limiting = False
+        self.observe_rate_limiting = False
 
     def _generate_config(self):
         self._config = {}
-        if self.start_time:
+        if self.start_time is not None:
             self._config['start_time'] = self.start_time
-        if self.optimal_hours:
+        if self.optimal_hours is not None:
             self._config['optimal_hours'] = self.optimal_hours
-        if self.influence_rate_limiting:
+        if self.influence_rate_limiting is not None:
             self._config['influence_rate_limiting'] = self.influence_rate_limiting
-        if self.start_time:
+        if self.observe_rate_limiting is not None:
+            self._config['observe_rate_limiting'] = self.observe_rate_limiting
+        if self.start_time is not None:
             self._config['start_time'] = self.start_time
-        if self.campaign:
+        if self.campaign is not None:
             self._config['campaign_name'] = self.campaign
         return self._config
 
